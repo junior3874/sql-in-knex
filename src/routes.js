@@ -1,7 +1,7 @@
 const routes = require("express").Router();
+const UserController = require("./controllers/UserController");
 
-routes.get("/", (req, res) => {
-    res.json({ text: "hello, world" });
-});
+const userController = new UserController();
+routes.get("/", userController.index);
 
 module.exports = routes;
